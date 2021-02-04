@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--- Source for the header: https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp -->
+    <link rel="stylesheet" href="index.css">
+    <title>Weight converter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<h1 id="title">
+Welcome! Here you can convert weight between kg and stone & lbs :)
+</h1>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-3">
+        <h4><u>Stone and/or lbs to kg:</u></h4>
+        <p id="tonedback"><i>If you wish, you can leave either the stone or the lbs boxes empty.</i></p>
+        <!-- Input(s) -->
+        <label for="stone">Input stones here:</label>
+        <input id="stone">
+        <br>
+        <label for="lbs">Input lbs here:</label>
+        <input id="lbs1">
+        <br>
+        <br>
+        <button type="button" onclick="generatekgs()">Calculate</button>
+        <p>
+        Your weight in kgs is:
+        </p>
+        <p id="kgOut">__________</p>
+    </div>
+
+    <!-- <div class="col-sm-1"></div> --->
+
+    <div class="col-sm-3">
+        <h4><u>kg to stone and lbs:</u></h4>
+        <!-- Input(s) -->
+        <label for="kgIn1">Input kg here:</label>
+        <input id="kgIn1">
+        <br>
+        <br>
+        <button type="button" onclick="generate_stone_lbs()">Calculate</button>
+        <p>
+        Your weight in stone and lbs is:
+        </p>
+        <p id="stoneOut">__________</p>
+    </div>
+
+    <div class="col-sm-3">
+        <h4><u>kg to lbs:</u></h4>
+        <!-- Input(s) -->
+        <label for="kgIn2">Input kg here:</label>
+        <input id="kgIn2">
+        <br>
+        <br>
+        <button type="button" onclick="generatelbs()">Calculate</button>
+        <p>
+        Your weight in lbs is:
+        </p>
+        <p id="lbsOut">__________</p>
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
