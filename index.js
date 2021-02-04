@@ -2,9 +2,11 @@ function generatekgs() {
     var stone = parseFloat(document.getElementById("stone").value);
     var lbs = parseFloat(document.getElementById("lbs1").value);
 
-    if (isNaN(stone)) {
+    if (!stone && !lbs) {
+        return
+    } if (isNaN(stone)) {
         var kgs = (0.453592*lbs); 
-    } else if (isNaN(lbs)) {
+    } if (isNaN(lbs)) {
         var kgs = (6.35029*stone);
     } else {
         var kgs = (6.35029*stone) + (0.453592*lbs);
@@ -22,7 +24,11 @@ function generate_stone_lbs(){
     var stone = Math.floor(kg / 6.35029);
     var overall_lbs = kg / 0.453592;
     var remainder_lbs = ( overall_lbs - (stone*14) ).toFixed(2);
-    var outp = `${stone} stone and ${remainder_lbs}lbs`
+    if (isNaN(kg)) {
+        var outp = "__________";
+    } else {
+        var outp = `${stone} stone and ${remainder_lbs}lbs`
+    }
 
     document.getElementById("stoneOut").innerHTML = outp;
 }
@@ -30,6 +36,11 @@ function generate_stone_lbs(){
 function generatelbs(){
     var kg = parseInt(document.getElementById("kgIn2").value);
     var lbs = kg / 0.453592;
-    var outp = `${lbs.toFixed(2)}lbs`;
+    if (isNaN(kg)) {
+        var outp = "__________";
+    } else {
+        var outp = `${lbs.toFixed(2)}lbs`;
     document.getElementById("lbsOut").innerHTML = outp;
 }
+
+// __________
