@@ -2,19 +2,17 @@ function generatekgs() {
     var stone = parseFloat(document.getElementById("stone").value);
     var lbs = parseFloat(document.getElementById("lbs1").value);
 
-    if (!stone && !lbs) {
-        return
-    } if (isNaN(stone)) {
+    if (isNaN(stone)) {
         var kgs = (0.453592*lbs); 
-    } if (isNaN(lbs)) {
+    } else if (isNaN(lbs)) {
         var kgs = (6.35029*stone);
     } else {
         var kgs = (6.35029*stone) + (0.453592*lbs);
     }
 
-    console.log("stone:",stone)
-    console.log("lbs:",lbs)
-    console.log("kg:",kgs)
+    console.log("stone:",stone);
+    console.log("lbs:",lbs);
+    console.log("kg:",kgs);
     
     document.getElementById("kgOut").innerHTML = kgs.toFixed(3);
 }
@@ -40,6 +38,7 @@ function generatelbs(){
         var outp = "__________";
     } else {
         var outp = `${lbs.toFixed(2)}lbs`;
+    }
     document.getElementById("lbsOut").innerHTML = outp;
 }
 
