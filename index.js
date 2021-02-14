@@ -18,7 +18,7 @@ function generatekgs() {
 }
 
 function generate_stone_lbs(){
-    var kg = parseInt(document.getElementById("kgIn1").value);
+    var kg = parseFloat(document.getElementById("kgIn1").value);
     var stone = Math.floor(kg / 6.35029);
     var overall_lbs = kg / 0.453592;
     var remainder_lbs = ( overall_lbs - (stone*14) ).toFixed(2);
@@ -32,7 +32,7 @@ function generate_stone_lbs(){
 }
 
 function generatelbs(){
-    var kg = parseInt(document.getElementById("kgIn2").value);
+    var kg = parseFloat(document.getElementById("kgIn2").value);
     var lbs = kg / 0.453592;
     if (isNaN(kg)) {
         var outp = "__________";
